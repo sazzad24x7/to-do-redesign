@@ -26,7 +26,7 @@ class AddTodoItem extends Component{
             alert('From Field Should Not Empty');
         }else{
             todo = {
-                id: Date.now,
+                id: Date.now(),
                 text: this.state.text,
                 colorBlock: "",
                 completion: false
@@ -76,8 +76,9 @@ class AddTodoItem extends Component{
             />);
 
         let buttonBlock = (<AppButtonOnlyIcon
+            btnIcon = "add"
             btnSize = "massive"
-            showInputField = {this.showInputFieldHandler}
+            onClickEvent = {this.showInputFieldHandler}
             btnColor = "blue"
             />);
 

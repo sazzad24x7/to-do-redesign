@@ -13,6 +13,6 @@ const AppButton = (props) => (<Button
     circular
     color = {props.btnColor}
     size = {props.btnSize}
-    onClick ={() => props.showInputField()}
-    icon='add'></Button>)
+    onClick ={() => props.onClickEvent()}
+    icon={props.btnIcon}></Button>)
 export default AppButton;
