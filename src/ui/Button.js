@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button } from 'semantic-ui-react'
-import AppIcon from './../ui/Icon';
 
 const AppButton = (props) => (<Button  
  size = {props.btnSize} 

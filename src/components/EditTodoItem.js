@@ -33,7 +33,6 @@ class EditTodoItem extends Component{
             this.props.editTodoItem(todo);
             this.setState({
                 isInputFieldShow: false,
-                text: ""
             })
         }
     }
@@ -53,7 +52,6 @@ class EditTodoItem extends Component{
             this.props.editTodoItem(todo);
             this.setState({
                 isInputFieldShow: false,
-                text: ""
             })
         }
     }
@@ -66,7 +64,7 @@ class EditTodoItem extends Component{
 
     editInputFieldBlock = (props) => {
         return (<InputFieldBasic 
-            InputFieldPlaceholder = "Add Todo Here..."
+            InputFieldPlaceholder = "Update Your Todo Here..."
             InputFieldSize = "massive"
             InputFieldValue = {this.state.text}
             InputFieldOnChangeHandler = {this.onChangeHandler}
@@ -78,10 +76,10 @@ class EditTodoItem extends Component{
     editButtonBlock = () => {
 
         return(<AppButtonOnlyIcon
-            btnIcon = "edit"
+            btnIcon = "compose"
             btnSize = "massive"
             onClickEvent = {this.showInputFieldHandler}
-            btnColor = "yellow"
+            btnColor = "green"
             />);
     }
 
@@ -93,10 +91,16 @@ class EditTodoItem extends Component{
         
     }
 }
+
+const mapStateToProps = state => {
+    return { todoData: state.todoData ? state.todoData : null };
+  };
+
+
 const mapDispatchToProps = dispatch => {
     return{
         editTodoItem: todo => dispatch(editTodoItem(todo))
     }
 }
 
-export default connect(null,mapDispatchToProps)(EditTodoItem);
+export default connect(mapStateToProps,mapDispatchToProps)(EditTodoItem);

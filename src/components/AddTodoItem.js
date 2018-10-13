@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {addTodoItem} from '../actions/index';
+import { Grid } from 'semantic-ui-react';
 import { InputFieldBasic } from '../ui/Form';
 import { AppButtonOnlyIcon } from '../ui/Button'
 
@@ -92,9 +93,13 @@ class AddTodoItem extends Component{
        
 
         return(
-            <div>
-                {this.blockShowFunction()}
-            </div>
+            
+            <Grid centered>
+                <Grid.Row>
+                {this.blockShowFunction()} 
+                </Grid.Row>
+            </Grid> 
+                          
         );
     }
 }
